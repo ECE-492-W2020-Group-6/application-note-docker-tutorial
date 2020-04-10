@@ -45,10 +45,3 @@ FROM build-image as runtime-image
 # Copy source code to container
 WORKDIR /src
 COPY . .
-
-# Add project to python path
-ENV PYTHONPATH="$PYTHONPATH:/src/rpi_voice_control/"
-
-# Run voice control script
-EXPOSE 3000
-CMD ["python3", "rpi_voice_control/voice_control.py"]
